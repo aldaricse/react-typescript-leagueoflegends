@@ -1,0 +1,50 @@
+.navbar {
+  position: fixed;
+  z-index: 10;
+  background-color: rgb($color_primary, .9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid $color_secondary;
+
+  &-brand {
+    .logo {
+      max-width: 40px;
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .hideMenuNav {
+      // display: none;
+      opacity: 0;
+    }
+
+    .showMenuNav {
+      // display: block;
+      opacity: 1;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      background: rgb($color_primary, .975);
+      transition: all .2s ease-in-out;
+
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 4rem;
+
+        a {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.image-gallery {
+  &-thumbnails {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+
+  &-thumbnail {
+
+    &.active,
+    &:hover,
+    &:focus {
+      border: 4px solid $color_secondary;
+    }
+  }
+
+  &-svg {
+    width: 40px !important;
+  }
+
+  &-icon:hover {
+    color: $color_secondary;
+  }
+}

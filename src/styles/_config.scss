@@ -1,0 +1,9 @@
+$color_primary: #010A13; // $color_base: rgb(1, 10, 19);
+$color_secondary: #C89B3C; // $color_secondary: rgb(200, 155, 60);
+$color1: #F0E6D2;
+
+:root {
+  --color-primary: #{$color_primary};
+  --color-secondary: #{$color_secondary};
+  --color1: #{$color1};
+}

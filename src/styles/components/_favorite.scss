@@ -1,0 +1,12 @@
+.star {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+  cursor: pointer;
+
+  svg {
+    transition: all .2s ease-in-out;
+    opacity: 0;
+  }
+}

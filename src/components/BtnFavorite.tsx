@@ -10,7 +10,10 @@ const BtnFavorite = ({ data }: Props): JSX.Element => {
   const { favoritechampions, toggleFavoriteChampions } = useFavoriteChampions()
   const isFavorite = favoritechampions?.find(item => item.id === data.id)
 
-  const handleClick = () => toggleFavoriteChampions?.(data)
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    toggleFavoriteChampions?.(data)
+  }
 
   return (
     <button

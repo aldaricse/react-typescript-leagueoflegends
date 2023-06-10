@@ -10,21 +10,21 @@ interface Props {
 const abilitiesKey = ['Q', 'W', 'E', 'R']
 
 const Abilities = ({ passive, spells }: Props) => {
-  const [abilitieActive, setAbilitieActive] = useState(0)
+  const [abilityActive, setAbilityActive] = useState(0)
 
-  const handleClickAbilitie = (index: number) => setAbilitieActive(index)
+  const handleClickAbility = (index: number) => setAbilityActive(index)
 
   return (
     <div className="champion-abilities max-w-md mx-auto">
-      <ul className="flex gap-x-8 mb-4">
+      <ul className="flex justify-between items-center gap-x-4 mb-4">
         <li className='flex flex-col'>
           {
             <>
               <span className='text-center text-sm'>PASSIVE</span>
               <button
-                className={abilitieActive === 0 ? 'active' : ''}
+                className={`${abilityActive === 0 ? 'active' : ''}`}
                 title={passive.name}
-                onClick={() => handleClickAbilitie(0)}
+                onClick={() => handleClickAbility(0)}
               >
                 <img
                   src={GeneralUrl.CHAMPION_PASSIVE_IMAGE_URL.replace('{id}', passive.image.full)}
@@ -38,9 +38,9 @@ const Abilities = ({ passive, spells }: Props) => {
             <li className='flex flex-col' key={item.id}>
               <span className='text-center text-sm'>{abilitiesKey[i]}</span>
               <button
-                className={abilitieActive === i + 1 ? 'active' : ''}
+                className={`${abilityActive === i + 1 ? 'active' : ''}`}
                 title={item.name}
-                onClick={() => handleClickAbilitie(i + 1)}
+                onClick={() => handleClickAbility(i + 1)}
               >
                 <img
                   src={GeneralUrl.CHAMPION_SPELL_IMAGE_URL.replace('{id}', item.id)}
@@ -53,15 +53,15 @@ const Abilities = ({ passive, spells }: Props) => {
 
       <div className="champion-abilities__description">
         {
-          abilitieActive === 0 ?
+          abilityActive === 0 ?
             <>
               <h4 className='uppercase block mb-1'>{passive.name}</h4>
               <p dangerouslySetInnerHTML={{ __html: passive.description }} />
             </>
             :
             <>
-              <h4 className='uppercase block mb-1'>{spells[abilitieActive - 1].name}</h4>
-              <p dangerouslySetInnerHTML={{ __html: spells[abilitieActive - 1].description }} />
+              <h4 className='uppercase block mb-1'>{spells[abilityActive - 1].name}</h4>
+              <p dangerouslySetInnerHTML={{ __html: spells[abilityActive - 1].description }} />
             </>
         }
       </div>

@@ -116,7 +116,7 @@ const ChampionDetail = (): JSX.Element => {
                 </AnimationMotion>
                 <div className="text-center mb-10">
                   <span className='text-xl uppercase'>{detailChampion.title}</span>
-                  <h2 className='text-6xl font-bold uppercase'>{detailChampion.name}</h2>
+                  <h2 className='text-4xl lg:text-6xl font-bold uppercase'>{detailChampion.name}</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
                   <div className="text-center my-6 md:my-0">
